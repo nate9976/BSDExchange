@@ -1,8 +1,10 @@
-﻿namespace BSDExchange.Api
+﻿using BSDExchange.Configuration;
+
+namespace BSDExchange.Api
 {
     public static class WebApi
     {
-        public static void Run(string[] args)
+        public static void Run(string[] args, DataFilesOptions dataFiles)
         {
             var builder = WebApplication.CreateBuilder(args);
 

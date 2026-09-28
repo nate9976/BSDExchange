@@ -17,12 +17,12 @@ if (string.IsNullOrWhiteSpace(dataFiles?.OrderBooksPath))
 }
 
 if (args.Length > 0)
-    return ConsoleApp.Run(args);
+    return ConsoleApp.Run(args, dataFiles);
 
 // If no arguments are specified run WebApi, if there are arguments run console app
 try
 {
-    WebApi.Run(args);
+    WebApi.Run(args, dataFiles);
 }
 catch (Exception ex)
 {
