@@ -1,17 +1,17 @@
-var builder = WebApplication.CreateBuilder(args);
+// If no arguments are specified run WebApi, if there are arguments run console app
+using BSDExchange.Api;
+using BSDExchange.ConsoleApplication;
 
-// Add services to the container.
+if (args.Length > 0)
+    return ConsoleApp.Run(args);
 
-builder.Services.AddControllers();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+try
+{
+    WebApi.Run(args);
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+    return 1;
+}
+return 0;
