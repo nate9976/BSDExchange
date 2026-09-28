@@ -3,7 +3,7 @@ using BSDExchange.Enums;
 using BSDExchange.Helpers;
 using BSDExchange.Models.Exchange;
 
-namespace BSDExchange.ConsoleApplication;
+namespace BSDExchange;
 
 public class ConsoleApp
 {

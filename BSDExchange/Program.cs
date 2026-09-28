@@ -1,6 +1,5 @@
-using BSDExchange.Api;
+using BSDExchange;
 using BSDExchange.Configuration;
-using BSDExchange.ConsoleApplication;
 
 // Load configuration to get file locations
 var configuration = new ConfigurationBuilder()

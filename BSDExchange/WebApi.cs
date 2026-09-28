@@ -1,6 +1,6 @@
 ﻿using BSDExchange.Configuration;
 
-namespace BSDExchange.Api;
+namespace BSDExchange;
 
 public static class WebApi
 {
