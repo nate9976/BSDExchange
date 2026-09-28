@@ -20,7 +20,11 @@ public static class WebApi
         var app = builder.Build();
 
         app.UseSwagger();
-        app.UseSwaggerUI();
+        app.UseSwaggerUI(options =>
+        {
+            // Disable syntax highlighting, froze swagger on large requests. e.g. buy 9999
+            options.ConfigObject.AdditionalItems["syntaxHighlight"] = false;
+        });
         app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
 
 
