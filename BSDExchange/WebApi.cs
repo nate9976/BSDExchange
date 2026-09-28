@@ -1,4 +1,5 @@
 ﻿using BSDExchange.Configuration;
+using BSDExchange.Helpers;
 
 namespace BSDExchange;
 
@@ -12,6 +13,9 @@ public static class WebApi
 
         builder.Services.AddControllers();
         builder.Services.AddSwaggerGen();
+
+        var data = ExchangeDataLoader.Load(dataFiles.OrderBooksPath, dataFiles.BalancesPath);
+        builder.Services.AddSingleton(data);
 
         var app = builder.Build();
 
