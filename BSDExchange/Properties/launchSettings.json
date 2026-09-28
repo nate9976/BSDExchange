@@ -11,7 +11,6 @@
     },
     "https": {
       "commandName": "Project",
-      "commandLineArgs": "test",
       "workingDirectory": "$(SolutionDir)",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -27,7 +26,8 @@
         "ASPNETCORE_HTTP_PORTS": "8080"
       },
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": true,
+      "launchBrowser": true
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json"
