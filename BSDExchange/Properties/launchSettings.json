@@ -2,7 +2,6 @@
   "profiles": {
     "http": {
       "commandName": "Project",
-      "commandLineArgs": "buy 1.5",
       "workingDirectory": "$(SolutionDir)",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

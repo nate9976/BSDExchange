@@ -1,28 +1,32 @@
 ﻿using BSDExchange.Configuration;
 
-namespace BSDExchange.Api
+namespace BSDExchange.Api;
+
+public static class WebApi
 {
-    public static class WebApi
+    public static void Run(string[] args, DataFilesOptions dataFiles)
     {
-        public static void Run(string[] args, DataFilesOptions dataFiles)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+        // Add services to the container.
 
-            builder.Services.AddControllers();
+        builder.Services.AddControllers();
+        builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+        var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+        app.UseSwagger();
+        app.UseSwaggerUI();
+        app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
 
-            app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+        app.UseHttpsRedirection();
 
-            app.MapControllers();
+        app.UseAuthorization();
 
-            app.Run();
-        }
+        app.MapControllers();
+
+        app.Run();
     }
 }
+
